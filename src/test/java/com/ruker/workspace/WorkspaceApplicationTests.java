@@ -8,7 +8,7 @@ class WorkspaceApplicationTests {
 
 	@Test
 	void contextLoads() {
-   // TODO document why this method is empty
- }
+		// TODO document why this method is empty
+	}
 
 }
