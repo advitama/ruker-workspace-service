@@ -21,14 +21,10 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final RestTemplate restTemplate;
+    private final RestTemplate restTemplate = new RestTemplate();
     private static final String USER_API_URL = System.getenv("AUTH_API_URL") + "/user/";
     private static final String AUTHORIZATION_HEADER = "Authorization";
     private static final String BEARER_PREFIX = "Bearer ";
-
-    public CustomUserDetailsService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
